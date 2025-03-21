@@ -1,0 +1,28 @@
+# Virtual environment folders
+bin/
+lib/
+lib64/
+__pycache__/
+pyvenv.cfg
+
+# Environment and configuration files
+credentials.csv
+
+# Temporary or generated files
+*.log
+*.tmp
+*.bak
+
+# IDE and editor settings
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Python cache and compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# Rough work or experimental directories (optional)
+rough/
