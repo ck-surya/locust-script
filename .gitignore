@@ -6,10 +6,7 @@ __pycache__/
 pyvenv.cfg
 
 # Environment and configuration files
-credentials.csv
-
 # Temporary or generated files
-*.log
 *.tmp
 *.bak
 
