@@ -49,6 +49,9 @@ for batch in TRAFFIC_SCHEDULE:
         "requests": batch["requests"]
     })
 
+print(REQUEST_QUEUE[0]["requests"])  # Example output
+#  {'method': 'GET', 'url': '/team/team/9122', 'count': 1}
+exit()
 # ---- Authenticated Locust User ----
 class LogReplayUser(HttpUser):
     wait_time = between(1, 2)
@@ -88,7 +91,7 @@ class LogReplayUser(HttpUser):
         except RequestException as e:
             print(f"❌ Login exception: {e}")
 
-    @task
+    # @task
     def replay_traffic(self):
         """Replays the traffic according to the current batch's schedule."""
         if not self.environment.runner:
@@ -116,6 +119,9 @@ class LogReplayUser(HttpUser):
                         print(f"➡️  {method} {url} - {res.status_code}")
                     except RequestException as e:
                         print(f"❌ Request error: {method} {url} - {e}")
+    @task
+    def makeRequest(self):
+        self.client.get("/team")  # Example request
 
     def get_active_batch(self):
         global test_start_time
